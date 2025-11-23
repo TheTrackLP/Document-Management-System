@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,9 +10,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth', 'roles:admin'])->group(function(){
+Route::middleware(['auth', 'roles:2'])->group(function(){
     Route::controller(AdminController::class)->group(function(){
         Route::get('/admin/dashboard', 'AdminDashboard')->name('admin.dash');
+    });
+
+    Route::controller(DocumentsController::class)->group(function(){
+        Route::get('/admin/documents', 'DocumentManage')->name('document.dash');
+        Route::get('/admin/documents/add', 'DocumentAdd')->name('document.add');
+        Route::post('/admin/documents/store', 'DocumentStore')->name('document.store');
+
+        Route::get('/admin/documents-revisions', 'RevisedDocuments')->name('revise.docs');
     });
 });
 

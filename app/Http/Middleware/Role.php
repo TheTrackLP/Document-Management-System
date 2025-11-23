@@ -15,8 +15,8 @@ class Role
      */
     public function handle(Request $request, Closure $next, $role): Response
     {
-        if($request->user()->roles !== $role){
-            return('/');
+        if (($request->user()->roles & (int) $role) !== (int) $role) {
+            return redirect('/');
         }
         return $next($request);
     }

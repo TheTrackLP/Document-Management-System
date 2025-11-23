@@ -7,35 +7,20 @@
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>
                 Dashboard
             </a>
-            <a class="nav-link">
+            <a class="nav-link" href="{{ route('document.dash') }}">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                Projects
+                Documents
+            </a>
+            <a class="nav-link" href="{{ route('revise.docs') }}">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-gauge"></i></div>
+                Documents Revisions
             </a>
             <a class="nav-link">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-gauge"></i></div>
-                Tasks
+                Manage Users
             </a>
             <a class="nav-link">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
-                Teams/Users
-            </a>
-
-            <div class="sb-sidenav-menu-heading">Tools</div>
-            <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar"></i></div>
-                Calendar
-            </a>
-            <div class="sb-sidenav-menu-heading">Management</div>
-            <a class="nav-link">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
-                Category
-            </a>
-            <a class="nav-link">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
-                Designation
-            </a>
-            <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-gauge"></i></div>
                 Settings
             </a>
         </div>
