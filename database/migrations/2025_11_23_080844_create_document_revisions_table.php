@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('document_revisions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doc_id')->constrained('documents');
-            $table->string('file_path');
             $table->integer('version');
-            $table->string('edited_by');
+            $table->string('file_path');
+            $table->string('updated_by');
+            $table->tinyInteger('is_current');
+            $table->tinyInteger('approval_status');
             $table->text('remarks')->nullable();
             $table->timestamps();
         });

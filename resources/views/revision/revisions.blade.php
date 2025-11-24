@@ -18,11 +18,11 @@ $i = 1;
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Document Title</th>
-                        <th class="text-center">Document Type</th>
-                        <th class="text-center">Employee Name</th>
-                        <th class="text-center">Year</th>
-                        <th class="text-center">Original Document</th>
-                        <th class="text-center">Authorize User</th>
+                        <th class="text-center">Version</th>
+                        <th class="text-center">File</th>
+                        <th class="text-center">Updated By</th>
+                        <th class="text-center">Date</th> 
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,10 +53,10 @@ $i = 1;
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="doc_id" class="form-label">Document</label>
-                            <select name="doc_id" id="doc_id" class="form-select" required>
+                            <select name="doc_id" id="doc_id" class="form-select select2" required>
                                 <option value="" selected disabled>Select Document</option>
                                 @foreach ($docs as $doc)
-                                <option value="{{ $doc->id }}">{{ $doc->title }}</option>
+                                <option value="{{ $doc->id }}">{{ $doc->doc_title }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">Please select a document.</div>

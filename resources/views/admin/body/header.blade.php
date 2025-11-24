@@ -18,6 +18,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script src="{{ asset('assets/js/validate.min.js') }}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -60,4 +63,13 @@ switch (type) {
         break;
 }
 @endif
+
+$(document).ready(function() {
+    $('.select2').each(function() {
+        $(this).select2({
+            innerWidth0: "100%",
+            dropdownParent: $(this).closest('.modal')
+        });
+    });
+});
 </script>
