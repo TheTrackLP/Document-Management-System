@@ -21,6 +21,7 @@ $i = 1;
                         <th class="text-center">Employee Name</th>
                         <th class="text-center">Year</th>
                         <th class="text-center">Original Document</th>
+                        <th class="text-center">Active Document</th>
                         <th class="text-center">Authorize User</th>
                     </tr>
                 </thead>
@@ -32,8 +33,17 @@ $i = 1;
                         <td class="text-center">{{ $doc->doc_type }}</td>
                         <td class="text-center">{{ $doc->emp_name }}</td>
                         <td class="text-center">{{ $doc->year }}</td>
-                        <td class="text-center"><a href="{{ asset($doc->upload_file) }}" target="_blank">View
-                                Document</a>
+                        <td class="text-center"><a href="{{ asset($doc->upload_file) }}"
+                                target="_blank">{{ $doc->upload_file }}</a>
+                        </td>
+                        <td class="text-center">
+                            @if(isset($doc_revs[$doc->id]))
+                            <a href="{{ asset($doc_revs[$doc->id]->file_path) }}" target="_blank">
+                                {{ basename($doc_revs[$doc->id]->file_path) }}
+                            </a>
+                            @else
+                            <p>No File Active Yet</p>
+                            @endif
                         </td>
                         <td class="text-center">
                             @if($doc->authorize == 1)

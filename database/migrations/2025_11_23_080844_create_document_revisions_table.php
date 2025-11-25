@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('document_revisions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doc_id')->constrained('documents');
-            $table->integer('version');
+            $table->string('version');
             $table->string('file_path');
             $table->string('updated_by');
             $table->tinyInteger('is_current');

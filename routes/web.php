@@ -19,8 +19,10 @@ Route::middleware(['auth', 'roles:2'])->group(function(){
         Route::get('/admin/documents', 'DocumentManage')->name('document.dash');
         Route::get('/admin/documents/add', 'DocumentAdd')->name('document.add');
         Route::post('/admin/documents/store', 'DocumentStore')->name('document.store');
-
+        
         Route::get('/admin/documents-revisions', 'RevisedDocuments')->name('revise.docs');
+        Route::post('/admin/documents-revisions/store', 'RevisedDocumentsStore')->name('revise.store');
+        Route::get('/admin/documents-revisions/active/{id}', 'RevisedDocumentActive')->name('revise.setActive');
     });
 });
 
